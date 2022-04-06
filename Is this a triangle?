@@ -1,0 +1,16 @@
+class Program
+{
+ static void Main(string[] args)
+    {
+        Program program = new Program();
+        IsTriangle(2, 3, 5);
+    }
+    public static bool IsTriangle(int a, int b, int c)
+    {
+        if (((a + b) > c) & ((a + c) > b) & ((b + c) > a))
+        {
+            return true;
+        }
+        return false;
+    }
+}
