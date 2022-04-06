@@ -1,0 +1,42 @@
+class Program
+{
+ static void Main(string[] args)
+    {
+        Program program = new Program();
+        BreakCamelCase("asdsa");
+    }
+    public static string BreakCamelCase(string str)
+    {
+        bool check;
+        bool check2;
+        int f = 0;
+        char value;
+        string ban = null;
+        string result = new string(str);
+        for (int i = 0; i < str.Length; i++)
+        {
+            value = str[i];
+
+            if (i > 0)
+            {
+                f = i - 1;
+            }
+            check2 = char.IsUpper(str[f]);
+            check = char.IsUpper(str[i]);
+            if ((check2 == false) & (check == false) || (check2 == true) & (check == false))
+            {
+                result = value.ToString();
+            }
+            if ((check2 == false) & (check == true))
+            {
+                result = " " + value;
+            }
+            if ((check2 == true) & (check == true))
+            {
+                result = " " + value.ToString();
+            }
+            ban = ban + result;
+        }
+        return ban;
+    }
+}
