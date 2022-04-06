@@ -1,0 +1,29 @@
+class Program
+{
+ static void Main(string[] args)
+    {
+        Program program = new Program();
+        program.GetSum(0, 1);
+    }
+    public int GetSum(int a, int b)
+    {
+        int min, max;
+        if (a > b)
+        {
+            max = a;
+            min = b;
+        }
+        else
+        {
+            max = b;
+            min = a;
+        }
+        int result = 0;
+        while (min <= max)
+        {
+            result += min;
+            min++;
+        }
+        return result;
+    }
+}
