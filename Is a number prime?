@@ -1,0 +1,59 @@
+class Program
+{
+ static void Main(string[] args)
+    {
+        Program program = new Program();
+        GetReadableTime(50);
+    }
+    public static string GetReadableTime(int seconds)
+    {
+        int hourse = 0;
+        int minutese = 0;
+        int secondse = 0;
+        int tempS = 0;
+        int tempM = 0;
+        string strSec = null;
+        string strMin = null;
+        string strHou = null;
+        string result = null;
+
+        secondse = seconds;
+
+        minutese = seconds / 60;
+        hourse = minutese / 60;
+
+        if (minutese != 1)
+        {
+            tempS = minutese * 60;
+            secondse = secondse - tempS;
+            tempM = hourse * 60;
+            minutese = minutese - tempM;
+        }
+        else if (minutese == 1)
+        {
+            tempS = minutese * 60;
+            secondse = secondse - tempS;
+        }
+
+        strSec = Convert.ToString(secondse);
+        strMin = Convert.ToString(minutese);
+        strHou = Convert.ToString(hourse);
+
+        if (strSec.Length == 1)
+        {
+            strSec = "0" + strSec;
+        }
+        if (strMin.Length == 1)
+        {
+            strMin = "0" + strMin;
+        }
+        if (strHou.Length == 1)
+        {
+            strHou = "0" + strHou;
+        }
+
+        result = strHou + ":" + strMin + ":" + strSec;
+
+        return result;
+    }
+}
