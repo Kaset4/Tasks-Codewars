@@ -1,0 +1,25 @@
+class Program
+{
+    
+    static void Main(string[] args)
+    {
+        Rot13("10+2 is twelve.");
+    }
+    public static string Rot13(string message)
+    {
+        string result = null;
+        string ABC = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=!@#$%^&*()_+/|.,\u0022[]{}:`<>';~?\u005C ";
+        string BCA = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM1234567890-=!@#$%^&*()_+/|.,\u0022[]{}:`<>';~?\u005C ";
+        for (int i = 0; i < message.Length; i++)
+        {
+            for (int j = 0; j < ABC.Length; j++)
+            {
+                if (message[i] == ABC[j])
+                {
+                    result = result + BCA[j];
+                }
+            }
+        }
+        return result;
+    }
+}
