@@ -1,0 +1,28 @@
+class Program
+{
+ static void Main(string[] args)
+    {
+        Program program = new Program();
+        OddOrEven(new int[] { 0, -1, 2 });
+    }
+    public static string OddOrEven(int[] array)
+    {
+        int temp = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            temp = temp + array[i];
+        }
+        if (temp == 0)
+        {
+            return "even";
+        }
+        if (temp % 2 == 0)
+        {
+            return "even";
+        }
+        else
+        {
+            return "odd";
+        }
+    }
+}
