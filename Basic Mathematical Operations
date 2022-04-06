@@ -1,0 +1,28 @@
+class Program
+{
+ static void Main(string[] args)
+    {
+        basicOp('+', 4, 7);
+    }
+    public static double basicOp(char operation, double value1, double value2)
+    {
+        double result = 0;
+
+        switch (operation)
+        {
+            case '+':
+                result = value1 + value2;
+                break;
+            case '-':
+                result = value1 - value2;
+                break;
+            case '*':
+                result = value1 * value2;
+                break;
+            case '/':
+                result = value1 / value2;
+                break;
+        }
+        return result;
+    }
+}
