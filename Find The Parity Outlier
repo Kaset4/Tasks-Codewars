@@ -1,0 +1,46 @@
+class Program
+{
+ static void Main(string[] args)
+    {
+        Program program = new Program();
+        Find(new int[] { 0, -1, 2 });
+    }
+    public static int Find(int[] integers)
+    {
+        int odd = 0;
+        int even = 0;
+        int result = 0;
+        for (int i = 0; i < integers.Length; i++)
+        {
+            if (integers[i] % 2 == 0)
+            {
+                even++;
+            }
+            else
+            {
+                odd++;
+            }
+        }
+        if (even > odd)
+        {
+            for (int i = 0; i < integers.Length; i++)
+            {
+                if (integers[i] % 2 != 0)
+                {
+                    result = integers[i];
+                }
+            }
+        }
+        else if (odd > even)
+        {
+            for (int i = 0; i < integers.Length; i++)
+            {
+                if (integers[i] % 2 == 0)
+                {
+                    result = integers[i];
+                }
+            }
+        }
+        return result;
+    }
+}
