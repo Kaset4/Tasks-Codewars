@@ -1,0 +1,18 @@
+public class Kata
+{
+  public static bool Alphanumeric(string str)
+    {
+        string check = " -=!@#$%^&*()_+/|.,\u0022[]{}:`<>';~?\u005C\n";
+        int count = 0;
+        if (str == "") count++;
+        foreach (char c in str)
+        {
+            foreach(char c2 in check)
+            {
+                if (c == c2) count++;
+            }
+        }
+        if (count >= 1) return false;
+        return true;
+    }
+}
